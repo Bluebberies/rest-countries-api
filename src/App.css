@@ -1,38 +1,415 @@
+*{
+ /* border: 2px solid red; */
+}
+
+body{
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: hsl(0, 0%, 98%);
+  position: relative;
   min-height: 100vh;
+}
+
+.App.dark{
+  background-color: hsl(207, 26%, 17%);
+}
+
+.App nav{
+  padding: 15px 25px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  transition: .5s;
+}
+
+.App nav.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+}
+
+.App nav h1{
+  margin: 0 2px;
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(200, 15%, 8%);
+}
+
+.App nav .row h1.darkMode{
+  color:  hsl(0, 0%, 100%);
+}
+
+.App nav .row h1.smallScreen{
+  font-size: 14px;
+}
+
+.App nav i.fa-solid.fa-moon.smallScreen{
+  font-size: 14px;
+}
+
+.App nav .changeMode{
+  cursor: pointer;
+  height: 2rem;
+}
+
+.App nav .changeMode p{
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 5px 5px 2px;
+  color: hsl(200, 15%, 8%);
+  transition: .5s;
+}
+
+.App nav .changeMode:active p{
+  font-size: 20px;
+}
+
+.App nav p.darkMode{
+  color:  hsl(0, 0%, 100%);
+}
+
+.App .search{
+  padding: 20px 25px;
+}
+
+.App .search .inputField{
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.App .search input{
+  font-size: 18px;
+  text-transform: lowercase;
+  text-indent: 30px;
+  width: 17rem;
+  height: 2.3rem;
+  border: none;
+  border-radius: 4px;
+  background-color: hsl(0, 0%, 52%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  color: hsl(0, 0%, 100%);
+}
+
+.App .search input.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+  color: hsl(0, 0%, 100%);
+}
+
+.App .search input.darkMode::placeholder{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .search input:focus{
+  border: none;
+  outline: none;
+}
+
+.App .search input::placeholder{
+  font-size: 10px;
+  /* padding-left: 2rem; */
+  font-size: 18px;
+  color: hsl(0, 0%, 100%);
+}
+
+.App .search span{
+  color: hsl(200, 15%, 8%);
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 9px;
+}
+
+.App .search span.darkMode{
+  color: hsl(0, 0%, 100%);
+  
+}
+
+.App .search button#dropdown-basic.dropdown{
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  border: none;
+  color: hsl(200, 15%, 8%);
+}
+
+.App .search button#dropdown-basic.dropdown.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+  color:  hsl(0, 0%, 100%);
+}
+
+.App .search a.region.dropdown-item{
+  color: hsl(200, 15%, 8%);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.App .search a.region.dropdown-item.darkMode{
+  color:  hsl(0, 0%, 100%);
+}
+
+.App .search .mt-2.dropdown-menu.show{
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  border: none;
+}
+
+.App .search .mt-2.dropdown-menu.show.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+}
+
+.App .search a.region.dropdown-item:hover {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.App .search a.region.dropdown-item.darkMode:hover {
+  background-color: hsl(207, 26%, 17%);
+}
+
+.App .allCountriesFragment{
+  padding-bottom: 5rem;
+}
+
+.App .cardHolder{
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  border-radius: 3px;
+  width: max-content;
+}
+
+.App .cardHolder.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+}
+
+.App .cardHolder img{
+  border-radius: inherit;
+  max-width: 14rem;
+  height: 11rem;
+}
+
+.App .cardHolder .cardInfo{
+  padding: 25px 20px
+}
+
+.App .cardHolder .cardInfo .infos{
   display: flex;
   flex-direction: column;
+  padding-top: 15px;
+}
+
+.App .cardHolder .cardInfo h3{
+  font-size: 14px;
+  font-weight: 800;
+  width: 11rem;
+  word-break: break-all;
+}
+
+.App .cardHolder .cardInfo h3.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .cardHolder .cardInfo .infos p{
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  width: 11rem;
+  word-break: break-all;
+}
+
+.App .cardHolder .cardInfo .infos p.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .cardHolder .cardInfo .infos span{
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.App .columnRows.smallScreen{
+  margin-left: 46px;
+}
+
+.pagination{
+  list-style: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 15px;
+  gap: 5px;
+}
+
+.break{
+  color: red;
+  font-size: 1rem;
+}
+
+.break.darkMode{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination .page-num{
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+  user-select: none;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination .page-num:hover{
+  background-color: #333333;
+  color: #ffffff;
 }
+
+.pagination .active{
+  background-color: #F7DF94;
+  
+}
+
+.pagination .disabled{
+ background-color: gray;
+ color: #ffffff;
+ cursor: not-allowed;
+} 
+
+.pagination .disabled:hover{
+  background-color: gray;
+  color: #ffffff;
+}
+
+.App .attribution{
+  font-size: 21px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 800;
+  color: hsl(200, 15%, 8%);
+}
+
+.App .attribution.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .details{
+  padding: 35px 35px;
+}
+
+.App .details .backBtn{
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+
+.App .details .backBtn.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+}
+
+.App .details .backBtn i{
+  font-size: 15px;
+}
+
+.App .details .backBtn span{
+  font-size: 16px;
+  font-weight: 600px;
+}
+
+.App .details .backBtn span.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .details img{
+  /* width: 38rem; */
+  width: 80%;
+  border-radius: 3px;
+}
+
+.App .details img.smallScreen{
+  width: 18rem;
+  border-radius: 3px;
+}
+
+.App .details .countryDetails h1{
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.App .details .countryDetails h1.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .details .countryDetails .aboutCountry p, .App .details .countryDetails .aboutCountryContinued p{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.App .details .countryDetails .aboutCountry p.darkMode, .App .details .countryDetails .aboutCountryContinued p.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .details .countryDetails .aboutCountry span, .App .details .countryDetails .aboutCountryContinued span{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.App .details .countryDetails h3.borderTitle{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.App .details .countryDetails h3.borderTitle.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+.App .details .countryDetails .borderCountries{
+  margin-left: 0;
+}
+
+.App .details .countryDetails .borderCountries p{
+  width: 7rem;
+  word-break: break-all;
+  padding: 3px;
+  font-size: 12px;
+  font-weight: 300;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+  margin-bottom: 3rem;
+}
+
+.App .details .countryDetails .borderCountries p.darkMode{
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+  color: hsl(0, 0%, 100%);
+}
+
+.spinner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 20px;
+}
+
+.spinner p{
+  font-family: 'Raleway';
+  font-size: 24px;
+}
+
+.spinner p.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
+
