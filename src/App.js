@@ -7,6 +7,7 @@ import NotFound from './components/notFound'
 import getReq from './services/httpService'
 import { ToastContainer } from 'react-toastify'
 import Home from './components/home'
+import BorderCountry from './components/borderCountry'
 
 function App () {
   const [Dark, setDark] = useState(false)
@@ -99,6 +100,7 @@ function App () {
           }
         />
         <Route path='/:name' element={<Details darkMode={Dark} />} />
+        <Route path='/:name/:bordername' element={<BorderCountry darkMode={Dark} />} />
         <Route path='/not-found' element={<NotFound />} />
         <Route path='*' element={<Navigate to='/not-found' replace />} />
       </Routes>

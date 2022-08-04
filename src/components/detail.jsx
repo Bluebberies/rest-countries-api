@@ -3,27 +3,28 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import getReq from "../services/httpService";
 import { useMediaQuery } from "react-responsive";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
+import { Link } from "react-router-dom";
 
 const Details = ({ darkMode }) => {
   const [countryData, setCountryData] = useState([]);
-  const [loaded, setLoaded] = useState(true)
+  const [loaded, setLoaded] = useState(true);
   const { name } = useParams();
   const navigate = useNavigate();
 
-  function returnBack () {
-    navigate('/')
-  };
+  function returnBack() {
+    navigate("/");
+  }
 
   useEffect(() => {
-    setLoaded(false)
+    setLoaded(false);
     const fetchData = async () => {
       const url = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
       try {
         const { data } = await getReq(url);
         setCountryData(data);
-        setLoaded(true)
+        setLoaded(true);
       } catch (error) {
         console.log(error);
       }
@@ -49,14 +50,14 @@ const Details = ({ darkMode }) => {
     color: darkMode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
   };
 
-  return loaded? (
+  return loaded ? (
     <div className="details">
       {countryData.map((country) => (
         <React.Fragment key={country.name.common}>
           <Row>
             <Col>
               <div
-              onClick={returnBack}
+                onClick={returnBack}
                 className={`backBtn ${dark()} d-flex flex-row justify-content-center align-items-center gap-2`}
               >
                 <i className="fa-solid fa-arrow-left-long" style={styles}></i>
@@ -131,14 +132,17 @@ const Details = ({ darkMode }) => {
                     </Col>
                     <Col sm={6}>
                       <div className="borderCountries d-flex flex-row justify-content-start align-items-center gap-2">
-                        {country.borders && (country.borders.map((borderCountry, index) => (
-                          <p
-                            key={index}
-                            className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
-                          >
-                            {borderCountry}
-                          </p>
-                        )))}
+                        {country.borders &&
+                          country.borders.slice(0, 5).map((borderCountry, index) => (
+                            <Link to={`/${name}/${borderCountry}`} style={{textDecoration: 'none', color: 'inherit'}}>
+                              <p
+                                key={index}
+                                className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
+                              >
+                                {borderCountry}
+                              </p>
+                            </Link>
+                          ))}
                       </div>
                     </Col>
                   </Row>
@@ -149,7 +153,7 @@ const Details = ({ darkMode }) => {
         </React.Fragment>
       ))}
     </div>
-  ): (
+  ) : (
     <div className="spinner">
       <Spinner style={styles} animation="border" />
       <p className={dark()}>Fetching please wait...</p>
