@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Bluebberies/rest-countries-api)
-- Live Site URL: [Add live site URL here](https://francisrestcountryapi.netlify.app/)
+- Solution URL: [View live solution here](https://github.com/Bluebberies/rest-countries-api)
+- Live Site URL: [View live site here](https://rest-countries-api-neon-beta.vercel.app/)
 
 ### Built with
 
