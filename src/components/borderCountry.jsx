@@ -170,7 +170,7 @@ const BorderCountry = ({ darkMode }) => {
       </div>
     )
   ) : (
-    <h5 className={dark()}>Country Unavailable Please Refresh Page or go back</h5>
+    <h5 className={dark()}>Cannot go to country Please Refresh Page or go back</h5>
   );
 };
 
