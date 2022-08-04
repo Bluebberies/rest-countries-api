@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import { useMediaQuery } from "react-responsive";
 import ReactPaginate from "react-paginate";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Spinner from "react-bootstrap/Spinner";
@@ -42,14 +42,17 @@ const AllCountries = ({ darkMode, allRegion, loaded }) => {
     color: darkMode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
   };
 
-  return loaded? (
+  return loaded ? (
     <div className="allCountriesFragment">
       <Container>
         <Row className={`columnRows ${checkScreen()}`}>
           {currentItems.map((currentItem) => (
             <Col sm={6} md={4} lg={3} key={currentItem.name.common}>
               {" "}
-              <Link to={`/${currentItem.name.common}`} style={{textDecoration: 'none', color: 'inherit'}}>
+              <Link
+                to={`/${currentItem.name.common}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <div className={`cardHolder ${dark()} mb-5`}>
                   <img src={currentItem.flags.png} alt="" />
                   <div className="cardInfo">
@@ -90,7 +93,7 @@ const AllCountries = ({ darkMode, allRegion, loaded }) => {
         disabledLinkClassName="disabled"
       />
     </div>
-  ): (
+  ) : (
     <div className="spinner">
       <Spinner style={styles} animation="border" />
       <p className={dark()}>Fetching please wait...</p>

@@ -133,16 +133,24 @@ const Details = ({ darkMode }) => {
                     <Col sm={6}>
                       <div className="borderCountries d-flex flex-row justify-content-start align-items-center gap-2">
                         {country.borders &&
-                          country.borders.slice(0, 5).map((borderCountry, index) => (
-                            <Link to={`/${name}/${borderCountry}`} style={{textDecoration: 'none', color: 'inherit'}}>
-                              <p
-                                key={index}
-                                className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
+                          country.borders
+                            .slice(0, 5)
+                            .map((borderCountry, index) => (
+                              <Link
+                                to={`/${name}/${borderCountry}`}
+                                style={{
+                                  textDecoration: "none",
+                                  color: "inherit",
+                                }}
                               >
-                                {borderCountry}
-                              </p>
-                            </Link>
-                          ))}
+                                <p
+                                  key={index}
+                                  className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
+                                >
+                                  {borderCountry}
+                                </p>
+                              </Link>
+                            ))}
                       </div>
                     </Col>
                   </Row>

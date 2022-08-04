@@ -1,16 +1,14 @@
 import React from "react";
 
-const Footer = ({darkMode}) => {
-    function dark() {
-        if (darkMode) {
-          return "darkMode";
-        }
-      }
-    
+const Footer = ({ darkMode }) => {
+  function dark() {
+    if (darkMode) {
+      return "darkMode";
+    }
+  }
+
   return (
-    <div
-      className={`attribution ${dark()}`}
-    >
+    <div className={`attribution ${dark()}`}>
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io?ref=challenge"

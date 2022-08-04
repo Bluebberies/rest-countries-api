@@ -44,6 +44,5 @@ const NavBar = ({ darkMode, handleMode }) => {
     </nav>
   );
 };
-// className="container text-center"
 
 export default NavBar;

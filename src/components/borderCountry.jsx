@@ -144,7 +144,13 @@ const BorderCountry = ({ darkMode }) => {
                             country.borders
                               .slice(0, 5)
                               .map((borderCountry, index) => (
-                                <Link to={`/${name}/${borderCountry}`} style={{textDecoration: 'none', color: 'inherit'}}>
+                                <Link
+                                  to={`/${name}/${borderCountry}`}
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "inherit",
+                                  }}
+                                >
                                   <p
                                     key={index}
                                     className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
@@ -170,7 +176,9 @@ const BorderCountry = ({ darkMode }) => {
       </div>
     )
   ) : (
-    <h5 className={dark()}>Cannot go to country Please Refresh Page or go back</h5>
+    <h5 className={dark()}>
+      Cannot go to country Please Refresh Page or go back
+    </h5>
   );
 };
 

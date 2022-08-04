@@ -41,7 +41,10 @@ const Navigate = ({ darkMode, handleClick, inputs, handleChange, region }) => {
     <div className="search">
       <Row>
         <Col className="inputField d-flex align-items-center gap-2">
-          <i className="fa-solid fa-magnifying-glass" style={{position: "absolute", left: '20px'}}></i>
+          <i
+            className="fa-solid fa-magnifying-glass"
+            style={{ position: "absolute", left: "20px" }}
+          ></i>
           <input
             type="text"
             value={inputs}

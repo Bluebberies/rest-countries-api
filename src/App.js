@@ -100,11 +100,13 @@ function App () {
           }
         />
         <Route path='/:name' element={<Details darkMode={Dark} />} />
-        <Route path='/:name/:bordername' element={<BorderCountry darkMode={Dark} />} />
+        <Route
+          path='/:name/:bordername'
+          element={<BorderCountry darkMode={Dark} />}
+        />
         <Route path='/not-found' element={<NotFound />} />
         <Route path='*' element={<Navigate to='/not-found' replace />} />
       </Routes>
-      {/* <Details darkMode={Dark}/> */}
       <Footer darkMode={Dark} />
     </div>
   )

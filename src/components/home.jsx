@@ -2,7 +2,15 @@ import React from "react";
 import Navigate from "./navigate";
 import AllCountries from "./allCountries";
 
-const Home = ({Dark, goTo, inputValue, searchCountry, region, allRegion, loaded}) => {
+const Home = ({
+  Dark,
+  goTo,
+  inputValue,
+  searchCountry,
+  region,
+  allRegion,
+  loaded,
+}) => {
   return (
     <div>
       <Navigate
