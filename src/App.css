@@ -167,6 +167,11 @@ body{
   padding-bottom: 5rem;
 }
 
+.App .allCountriesFragment .allCountriesItem{
+  width: 16rem;
+  margin-right: 4rem;
+}
+
 .App .cardHolder{
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
@@ -174,9 +179,12 @@ body{
   width: max-content;
 }
 
+.App .cardHolder:hover{
+  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
+}
+
 .App .cardHolder.darkMode{
   background-color: hsl(209, 23%, 22%);
-  box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
 }
 
 .App .cardHolder img{
@@ -368,6 +376,11 @@ body{
 
 .App .details .countryDetails .borderCountries{
   margin-left: 0;
+  margin-bottom: 3rem;
+}
+
+.App .details .countryDetails .borderCountries a{
+  height: 1rem;
 }
 
 .App .details .countryDetails .borderCountries p{

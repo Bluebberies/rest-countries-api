@@ -23,7 +23,7 @@ const BorderCountry = ({ darkMode }) => {
       const url = "https://restcountries.com/v3.1/all";
       try {
         const { data } = await getReq(url);
-        const country = data.filter((item) => item.cioc === bordername);
+        const country = data.filter((item) => (item.cioc === bordername || item.cca3 === bordername));
         setCountryData(country);
         setLoaded(true);
       } catch (error) {
@@ -50,8 +50,6 @@ const BorderCountry = ({ darkMode }) => {
   const styles = {
     color: darkMode ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)",
   };
-
-  console.log(countryData);
 
   return countryData.length ? (
     loaded ? (

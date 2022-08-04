@@ -47,7 +47,7 @@ const AllCountries = ({ darkMode, allRegion, loaded }) => {
       <Container>
         <Row className={`columnRows ${checkScreen()}`}>
           {currentItems.map((currentItem) => (
-            <Col sm={6} md={4} lg={3} key={currentItem.name.common}>
+            <Col className='allCountriesItem' sm={6} md={4} lg={3} key={currentItem.name.common}>
               {" "}
               <Link
                 to={`/${currentItem.name.common}`}
