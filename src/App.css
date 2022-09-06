@@ -333,6 +333,7 @@ body{
 .App .details img{
   width: 80%;
   border-radius: 3px;
+  box-shadow: 0 4px 7px 4px rgba(0,0,0,0.3);
 }
 
 .App .details img.smallScreen{
@@ -391,14 +392,29 @@ body{
   font-weight: 300;
   border-radius: 5px;
   background-color: hsl(0, 0%, 100%);
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
   margin-bottom: 3rem;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+}
+
+.App .details .countryDetails .borderCountries p:hover{
+  box-shadow: 0 4px 4px -1px rgba(0,0,0,0.25);
+}
+
+.App .details .countryDetails .borderCountries p.none{
+  background-color: none;
+  font-size: 12px;
+  font-weight: bolder;
+  box-shadow: none;
 }
 
 .App .details .countryDetails .borderCountries p.darkMode{
   background-color: hsl(209, 23%, 22%);
   box-shadow: 0 3px 8px 3px rgba(0,0,0,0.3);
   color: hsl(0, 0%, 100%);
+}
+
+.App .details .countryDetails .borderCountries p.darkMode:hover{
+  box-shadow: 0 4px 4px -1px rgba(0,0,0,0.25);
 }
 
 .App h5.darkMode{

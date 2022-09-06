@@ -136,13 +136,7 @@ const Details = ({ darkMode }) => {
                           country.borders
                             .slice(0, 5)
                             .map((borderCountry, index) => (
-                              <Link
-                                to={`/${name}/${borderCountry}`}
-                                style={{
-                                  textDecoration: "none",
-                                  color: "inherit",
-                                }}
-                              >
+                              <Link to={`/${name}/${borderCountry}`}>
                                 <p
                                   key={index}
                                   className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
@@ -151,6 +145,7 @@ const Details = ({ darkMode }) => {
                                 </p>
                               </Link>
                             ))}
+                        {!country.borders && <p className="none">None...</p>}
                       </div>
                     </Col>
                   </Row>

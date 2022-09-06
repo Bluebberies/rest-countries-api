@@ -23,7 +23,9 @@ const BorderCountry = ({ darkMode }) => {
       const url = "https://restcountries.com/v3.1/all";
       try {
         const { data } = await getReq(url);
-        const country = data.filter((item) => (item.cioc === bordername || item.cca3 === bordername));
+        const country = data.filter(
+          (item) => item.cioc === bordername || item.cca3 === bordername
+        );
         setCountryData(country);
         setLoaded(true);
       } catch (error) {
@@ -142,13 +144,7 @@ const BorderCountry = ({ darkMode }) => {
                             country.borders
                               .slice(0, 5)
                               .map((borderCountry, index) => (
-                                <Link
-                                  to={`/${name}/${borderCountry}`}
-                                  style={{
-                                    textDecoration: "none",
-                                    color: "inherit",
-                                  }}
-                                >
+                                <Link to={`/${name}/${borderCountry}`}>
                                   <p
                                     key={index}
                                     className={`d-flex flex-row justify-content-center align-items-center ${dark()}`}
@@ -157,6 +153,7 @@ const BorderCountry = ({ darkMode }) => {
                                   </p>
                                 </Link>
                               ))}
+                          {!country.borders && <p className="none">None...</p>}
                         </div>
                       </Col>
                     </Row>
