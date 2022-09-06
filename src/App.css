@@ -401,6 +401,10 @@ body{
   color: hsl(0, 0%, 100%);
 }
 
+.App h5.darkMode{
+  color: hsl(0, 0%, 100%);
+}
+
 .spinner{
   display: flex;
   flex-direction: row;
@@ -408,10 +412,6 @@ body{
   justify-content: center;
   margin-top: 5rem;
   gap: 20px;
-}
-
-.App h5.darkMode{
-  color: hsl(0, 0%, 100%);
 }
 
 .spinner p{
